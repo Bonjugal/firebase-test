@@ -1,4 +1,3 @@
-import FirebaseAuthService from './FirebaseAuthService';
 import firebase from './FirebaseConfig';
 
 const firestore = firebase.firestore();
