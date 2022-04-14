@@ -2,9 +2,7 @@ import { useState } from 'react';
 
 import FirebaseAuthService from '../FirebaseAuthService';
 
-const LoginForm = (existingUser) => {
-
-    //console.log(existingUser.existingUser);
+const LoginForm = ({existingUser}) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -53,8 +51,8 @@ const LoginForm = (existingUser) => {
     return (
         <div className="login-form-container">
             {
-                existingUser.existingUser ? (<div className="row">
-                    <h3>Welcome {existingUser.existingUser.email}</h3>
+                existingUser ? (<div className="row">
+                    <h3>Welcome {existingUser.email}</h3>
                     <button type="button" className ="primary-button" onClick={handleLogout}>Logout</button></div>) 
                     : (<form onSubmit={handleSubmit} className="login-form">
                     <label className="input-label login-label">
